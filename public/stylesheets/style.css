@@ -4,13 +4,17 @@ body{
 }
 
 span.typed{
+    font-size: 14px;
 	font-family: "Courier New", Courier, monospace;
 	color:white;
-	mix-blend-mode: difference;
+    mix-blend-mode: difference;
 }
 
 p {
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+    font-size: 14px;
+    font-family: "Courier New", Courier, monospace;
+    color:white;
+    mix-blend-mode: difference;
 }
 
 a {

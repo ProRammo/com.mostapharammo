@@ -1,16 +1,20 @@
 
+var welcomeTxt = "MOSTAPHA RAMMO DOT COM<br/>--------------------<br/>new? try 'help'<br/><br/>"
 var baseTxt = "mostapharammo.com $ ";
 var hist = "";
 var command = "";
 var commandHist = ["<br/>"];
 var lightColours = ["white", "lightgrey", "grey", "gray"];
 var changeColour = true;
+var directories = ["gui"];
 
-var help = "<br/> Hey there! Need some help? Here is a list of commands currently available, try them out! <br/>"
+var help = "<br/> Hey there! Need some help? Here is a list of commands currently available, try them out! <br/><br/>"
 			+" > help: list available commands<br/>"
+			+" > cd X: change to 'X' directory<br/>"
+			+" > ls: list currently available directories<br/>"
 			+" > hist: list all previously used commands<br/>"
 			+" > clear: clear screen <br/>"
-			+" > colour --<colour>: change background colour"
+			+" > colour --X: change background colour to 'X'<br/>"
 			+"<br/>"
 
 $(function(){
@@ -19,11 +23,13 @@ $(function(){
 
 	$('.typed').typed({
         strings: [baseTxt],
-        typeSpeed: 0,
+        //typeSpeed: 0,
         cursorChar: "_"
     });
 
     $("body").keypress(function(evt){
+
+    	var key = evt.key || String.fromCharCode(evt.which);
 
     	if (evt.which == 13){
     		commandHist.push(command);
@@ -86,6 +92,45 @@ $(function(){
 
     		}
 
+    		//CHANGE DIRECTORY
+
+    		else if(command.substring(0,2) == "cd"){
+    			
+    			var dir = command.substring(3);
+    			if (isin(dir,directories)){
+    				window.location.href = "/"+dir;
+    			}
+    			else{
+    				hist += "-moose: not valid directory<br/>";
+    			}
+
+    		}
+
+    		//LIST DIRECTORIES
+
+    		else if (command.substring(0,2) == "ls"){
+
+    			hist += "<br/>";
+				for (var i=0; i<directories.length;i++){
+					hist += " > "+directories[i]+"<br/>";
+				}
+				hist += "<br/>";
+
+    		}
+
+    		//GITHUB LINK
+
+    		else if(command == "github"){
+
+    			window.location.href = "https://github.com/ProRammo";
+
+    		}
+
+    		//NO STRING
+
+    		else if(command == ""){
+    		}
+
     		//DEFAULT
 
     		else{								//command not found
@@ -98,9 +143,8 @@ $(function(){
     		write(command);
     		
     	}else{
-    		command += evt.key;
+    		command += key;
     		write(command);
-    		//console.log(evt.which);
     	}
    		window.scroll(0,10000)
     });
