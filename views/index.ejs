@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html style="height:100%;">
+	<head>
+		<title>MR</title>
+		
+		<link href="https://fonts.googleapis.com/css?family=Francois+One|Open+Sans:300" rel="stylesheet">
+		<link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet">
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.0/css/materialize.min.css">
+
+		<!-- JAVASCRIPT REFS -->
+		<script src="http://code.jquery.com/jquery-3.1.1.min.js" 
+				integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
+  				crossorigin="anonymous"></script>
+	</head>
+
+	<body style="height:inherit;">
+
+
+		<main style="height:inherit;">
+
+			<div class="container" style="height:inherit;">
+
+				<div class="row valign-wrapper" style="height:inherit;">
+
+					<div class="col s12 center valign" style="opacity: 0.87">
+						<div id="title">I code</div>
+						<div id="subtitle">Occasionally</div>
+						<a href="https://github.com/ProRammo" style="font-size: 10px;text-decoration: none;color:blue;">GitHub</a>
+					</div>
+
+				</div>
+
+			</div>
+
+		</main>
+
+		<%- include('partials/footer') %>
+		
+	</body>
+
+	<style>
+		html{
+			font-family: 'Ubuntu', sans-serif;
+		}
+		#title{
+			font-family: 'Francois One', sans-serif;
+			font-size: 50px;
+		}
+
+		#subtitle{
+			font-size: 20px;
+		}
+		body {
+			display: flex;
+			min-height: 100vh;
+			flex-direction: column;
+		}
+		main {
+			flex: 1 0 auto;
+		}
+
+	</style>
+
+</html>
+
