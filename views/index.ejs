@@ -15,6 +15,7 @@
 
 	<body style="height:inherit; background-color: #FEFEFA;">
 
+		<%- include('partials/canvas') %>
 
 		<main style="height:inherit;">
 
@@ -22,8 +23,8 @@
 
 				<div class="row valign-wrapper" style="height:inherit;">
 
-					<div class="col s12 center valign" style="opacity: 0.87">
-						<div id="title">I code</div>
+					<div class="col s12 center valign" style="opacity: 0.87;">
+						<div id="title">I code.</div>
 						<div id="subtitle">Occasionally</div>
 						<a href="https://github.com/ProRammo" style="font-size: 10px;text-decoration: none;color:blue;">GitHub</a>
 					</div>
@@ -57,6 +58,9 @@
 		}
 		main {
 			flex: 1 0 auto;
+		}
+		div {
+			cursor: unset;
 		}
 
 	</style>
