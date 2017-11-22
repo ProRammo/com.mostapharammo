@@ -83,7 +83,7 @@ function Circle(x, y, vx, vy, radius, color) {
 var circles = [];
 var color = 'rgba(153,153,153,0.15)';
 for (var i = 0; i < 1000; i++){
-	let radius = Math.max(Math.random() * 2, 1);
+	let radius = Math.max(Math.random() * 3, 1);
 	let x = Math.random() * (innerWidth - radius * 2) + radius;
 	let y = Math.random() * (innerHeight - radius * 2) + radius;
 	let vx = (Math.random() - 0.5);
