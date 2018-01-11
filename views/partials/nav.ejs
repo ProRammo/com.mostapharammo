@@ -1,0 +1,61 @@
+
+<div class="m-nav">
+    <a href="/"><span class="m-nav-text m-nav-green">moose@mostapharammo.com ~ $ </span><span class="m-nav-text m-nav-green" id="m-nav-cursor">|</span></a>
+    <a href="https://www.moosethegoose.ca"><span class="m-nav-text m-nav-subtle m-nav-right m-nav-sublink">/home/goose</span></a>
+    <a href="http://blog.moosethegoose.ca"><span class="m-nav-text m-nav-subtle m-nav-right m-nav-sublink">/home/goose/blog</span></a>
+    <a href="/"><span class="m-nav-text m-nav-subtle m-nav-right m-nav-sublink">/home/moose</span></a>    
+</div>
+<div class="seperator"></div>
+
+<style>
+    .seperator {
+        width: 100%;
+        border: 1px solid blue;
+    }
+    .m-nav {
+        width: 100%;
+        height: auto;
+        background-color: rgba(0, 0, 0, 0.82);
+        padding-left: 0.4%;
+        padding-right: 0.4%;
+        padding-bottom: 0.4%;
+        padding-top: 0.4%;
+    }
+    .m-nav-green {
+        color: #26d826;
+    }
+    .m-nav-subtle {
+        color: grey;
+    }
+    .m-nav-text {
+        display: inline;
+        font-weight: 200;
+        font-size: 20px;
+        font-family: 'Aldrich', sans-serif;
+    }
+    .m-nav-cursor {
+        visibility: visible;
+    }
+    .m-nav-right {
+        float: right;
+    }
+    .m-nav-sublink {
+        padding-left: 2vw;
+    }
+</style>
+
+<script>
+    $(document).ready(function(){
+        
+        var cursorState = "visible";
+        var blinkCursor = function(){
+            $("#m-nav-cursor").css("visibility", cursorState);
+            if (cursorState == "visible")
+                cursorState = "hidden"
+            else   
+                cursorState = "visible"
+        }
+        setInterval(blinkCursor, 500);
+
+    });
+</script>

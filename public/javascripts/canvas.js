@@ -64,6 +64,12 @@ function Circle(x, y, vx, vy, radius, color) {
 		if (this.y + this.radius >= innerHeight || this.y - this.radius <= 0){
 			this.vy = -this.vy;
 		}
+		if (this.y < innerHeight/10){
+			if (this.vy > 0)
+				this.vy = Math.abs(this.vx)
+			else
+				this.vy = -1 * Math.abs(this.vx)
+		}
 
 		// interactivity
 		if ( dist(this.x, this.y, mouse.x, mouse.y) < 40 ){
@@ -85,9 +91,10 @@ var color = 'rgba(153,153,153,0.15)';
 for (var i = 0; i < 1000; i++){
 	let radius = Math.max(Math.random() * 3, 1);
 	let x = Math.random() * (innerWidth - radius * 2) + radius;
-	let y = Math.random() * (innerHeight - radius * 2) + radius;
+	let y = 99*innerHeight/100 + Math.random() * (innerHeight/100 - radius * 2) + radius;
+	
 	let vx = (Math.random() - 0.5);
-	let vy = (Math.random() - 0.5);
+	let vy = (Math.random() - 0.7);
 	circles[i] = new Circle(x, y, vx, vy, radius, color);
 }
 

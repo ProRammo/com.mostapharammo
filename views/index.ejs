@@ -6,6 +6,8 @@
 		<link href="https://fonts.googleapis.com/css?family=Francois+One|Open+Sans:300" rel="stylesheet">
 		<link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet">
 		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.0/css/materialize.min.css">
+		<link href="https://fonts.googleapis.com/css?family=Aldrich" rel="stylesheet">
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 
 		<!-- JAVASCRIPT REFS -->
 		<script src="http://code.jquery.com/jquery-3.1.1.min.js" 
@@ -15,6 +17,9 @@
 
 	<body style="height:inherit; background-color: #FEFEFA;">
 
+		<div style="z-index: 1000">
+		<%- include('partials/nav') %>
+		</div>
 		<%- include('partials/canvas') %>
 
 		<main style="height:inherit;">
@@ -24,14 +29,20 @@
 				<div class="row valign-wrapper" style="height:inherit;">
 
 					<div class="col s12 center valign" style="opacity: 0.87;">
+						<div class="m-profile-photo"></div>
+						<div class="m-sep"></div>
 						<div id="subtitle">
 							Mostapha Rammo
 						</div>
-						<div id="title">Check out my lastest project on 
-							<a target="_blank" href="https://github.com/rammom" style="text-decoration: none;color:blue;">Github.</a>
+						<div id="title">
+							Software Enthusiast.
 						</div>
-						<div id="subtitle">
-							<a target="_blank" style="text-decoration: none;color:blue;" href="https://github.com/JoseAlba/HackWestern4">"Smart" security camera implemented with IBM Watson</a>
+						<div id="social">
+							<a target="_blank" href="https://www.linkedin.com/in/mostapha-rammo-52350b128" class="m-social-link"><i class="fa fa-linkedin fa-3x" aria-hidden="true"></i></a>					
+							<a target="_blank" href="https://www.facebook.com/MostaphaRammo" class="m-social-link"><i class="fa fa-facebook-square fa-3x" aria-hidden="true"></i></a>
+							<a target="_blank" href="https://github.com/rammom" class="m-social-link"><i class="fa fa-github-alt fa-3x" aria-hidden="true"></i></a>
+							<a target="_blank" href="https://www.instagram.com/mostapharammo" class="m-social-link"><i class="fa fa-instagram fa-3x" aria-hidden="true"></i></a>
+							
 						</div>
 					</div>
 
@@ -46,8 +57,34 @@
 	</body>
 
 	<style>
+		.m-social-link{
+			padding-left: 1vw;
+			padding-right: 1vw;
+			text-decoration: none;
+			color: rgba(0, 0, 0, 0.88);
+		}
+		.m-sep {
+			border: 1px solid blue;
+			margin: 1vw;
+			margin-right: 10vw;
+			margin-left: 10vw;
+		}
+		.m-profile-photo {
+			display: inline-block;
+			width: 15vw;
+			height: 15vw;
+
+			border-radius: 50%;
+			border: 5px solid rgba(0, 0, 0, 0.82);
+
+			background-repeat: no-repeat;
+			background-position: center center;
+			background-size: cover;
+			background-image: url("https://avatars2.githubusercontent.com/u/4411114?s=460&v=4")
+		}
 		html{
 			font-family: 'Ubuntu', sans-serif;
+			overflow: hidden;
 		}
 		#title{
 			font-family: 'Francois One', sans-serif;
@@ -64,9 +101,6 @@
 		}
 		main {
 			flex: 1 0 auto;
-		}
-		div {
-			cursor: unset;
 		}
 
 	</style>
